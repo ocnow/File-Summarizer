@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+    <head>
+        <title>Application</title>
+        <link href="output.css" rel="stylesheet" />
+        <script src="./js/main.js"></script>
+    </head>
+
+    <body>
+        <div class="flex-col w-screen h-screen bg-blue-100">
+            <div class="flex justify-center items-center h-20 w-full bg-blue-500">
+                <div class="text-white text-base font-bold"><label>Application Name</label></div>
+            </div>
+
+            <div class="flex items-center justify-center w-full h-full bg-gray-400">
+
+                <div class="flex flex-col w-2/6 h-4/6 bg-gray-100 rounded-xl">
+                    <div class="flex-none min-w-full h-fit px-4 sm:px-6">
+                        <ul class="flex justify-around border-b-2 border-current text-sky-500 space-x-6 whitespace-nowrap">
+                            <li>
+                                <h2><a id="a-option-1"
+                                        class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 -mb-px text-sky-500"
+                                        onclick="link(1);">Upload Resume</a></h2>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="w-full h-full ">
+                        <div id="d-option-1" class="w-full h-full flex flex-col justify-center items-center">
+                            
+                            <div class="w-full px-20">
+                                <label for="username" class="block text-base mb-2">Business Process</label>
+                                <input type="text" id="username" class="border w-full text-base px-2 py-1
+                                 focus:outline-none focus:ring-0 focus:border-gray-600 rounded-md" placeholder="Enter JobId"/>
+                            </div>
+
+                            <div class="w-full mt-5 mb-5 px-20">
+                                <label for="username" class="block text-base mb-2">Job Id</label>
+                                <input type="text" id="username" class="border w-full text-base px-2 py-1
+                                 focus:outline-none focus:ring-0 focus:border-gray-600 rounded-md" placeholder="Enter JobId"/>
+                            </div>
+                            
+                            <div class="">
+                                <label>
+                                    <span class="sr-only">Choose Resume File</span>
+                                    <input type="file" class="block w-full text-sm text-slate-500
+                                    file:mr-4 file:py-2 file:px-4
+                                    file:rounded-full file:border-0
+                                    file:text-sm file:font-semibold
+                                    
+                                    file:bg-violet-200 file:text-violet-700
+                                    hover:file:bg-violet-300" />
+                                </label>
+                                
+                            </div>
+                            
+                           
+                            <div>
+                                <button class="bg-sky-600 rounded-xl w-96 h-10 mt-9 hover:bg-sky-800 text-white">Upload</button>
+                            </div>
+    
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
