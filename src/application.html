@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>Application</title>
+    <link href="output.css" rel="stylesheet" />
+    <script src="./js/main.js"></script>
+</header>
+
+<body>
+    <div class="flex-col w-screen h-screen bg-blue-100">
+        <div class="flex justify-center items-center h-20 w-full bg-blue-500">
+            <div class="text-white text-base font-bold"><label>Application Name</label></div>
+        </div>
+        <div class="flex items-center justify-center w-full h-full bg-gray-400 gap-3">
+            <div class="flex flex-col w-2/6 h-4/6 bg-gray-100 rounded-xl">
+                <div class="flex-none min-w-full h-fit px-4 sm:px-6">
+                    <ul class="flex justify-around border-b space-x-6  whitespace-nowrap">
+                        <li>
+                            <h2><a id="a-option-1"
+                                    class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-sky-500 border-current"
+                                    onclick="link(1);">Upload & Summarize</a></h2>
+                        </li>
+                        <li>
+                            <h2><a id="a-option-2"
+                                    class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-sky-500 "
+                                    onclick="link(2);">Custom Options</a></h2>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full h-full ">
+                    <div id="d-option-1" class="w-full h-full flex flex-col justify-center items-center">
+                        <div class="w-4/6">
+                            <label>
+                                <span class="sr-only">Choose profile photo</span>
+                                <input type="file" class="block w-full text-sm text-slate-500
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-full file:border-0
+                                file:text-sm file:font-semibold
+                                
+                                file:bg-violet-200 file:text-violet-700
+                                hover:file:bg-violet-300" />
+                            </label>
+                            
+                        </div>
+                        
+                        <div class="w-4/6 mt-9">
+                            <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-red">Word Count</label>
+                            <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        </div>
+                        <div>
+                            <button class="bg-sky-600 rounded-xl w-40 h-10 mt-9 hover:bg-sky-800 text-white">Summarize</button>
+                        </div>
+
+                    </div>
+                    <div id="d-option-2" class="w-full h-full hidden flex-col justify-center items-center">
+                        <h1>Custom options</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="w-3/6 h-4/6 bg-gray-200 rounded-xl flex flex-col px-8 py-10">
+                <ul class="flex flex-col gap-2 list-disc">
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    <li>is simply dummy text of the printing and typesetting industry.</li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
