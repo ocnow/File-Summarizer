@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function({className,data,isLoading,fetchStatus}){
   console.log("this is getting redered.....");
 

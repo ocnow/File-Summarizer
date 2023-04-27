@@ -1,7 +1,8 @@
 import { useRef, useState } from "react"
 import WordCountSlider from "./mini-comps/WordCountSlider";
+import UploadComponent from "./mini-comps/uploadComponent"
 
-export default function({className,summaryQueryfunc}){
+export default function appComponent({className,summaryQueryfunc}){
     const [isUploadActive,setIsUploadActive] = useState(true);
 
     const changeSections = event => {
@@ -32,23 +33,8 @@ export default function({className,summaryQueryfunc}){
                 </div>
                 <div className="w-full h-full flex flex-col justify-center items-center">
                     <div id="d-option-1" className={"w-full h-2/3 " + (isUploadActive? "flex flex-col justify-center items-center ":"hidden")}>
-                        <div className="w-4/6">
-                            <label>
-                                <span className="sr-only">Choose File</span>
-                                <input type="file" className="block w-full text-sm text-slate-500
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-full file:border-0
-                            file:text-sm file:font-semibold
-                            
-                            file:bg-violet-200 file:text-violet-700
-                            hover:file:bg-violet-300" />
-                            </label>
-
-                        </div>
-
+                        <UploadComponent className={"w-4/6"} />
                         <WordCountSlider className="w-4/6 mt-9"/>
-                        
-
                     </div>
                     <div id="d-option-2" className={"w-full h-2/3 " + (isUploadActive? "hidden":"flex flex-col justify-center items-center")}>
                         <input type="text" placeholder="Enter Keywords to summarize on..." className="w-4/6 border-2 rounded-md p-3"/>
