@@ -10,7 +10,7 @@ export default function(props){
     }
 
     return <div className={props.className}>
-                            <label for="default-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-red">Word Count {counter}</label>
+                            <label htmlFor="default-range" className="block mb-2 text-sm font-medium text-gray-900 dark:text-red">Word Count {counter}</label>
                             <div>
                                 <div className="relative flex items-center justify-center gap-2">
                                     <div>100</div>

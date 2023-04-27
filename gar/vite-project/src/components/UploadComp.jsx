@@ -34,7 +34,7 @@ export default function({className,summaryQueryfunc}){
                     <div id="d-option-1" className={"w-full h-2/3 " + (isUploadActive? "flex flex-col justify-center items-center ":"hidden")}>
                         <div className="w-4/6">
                             <label>
-                                <span className="sr-only">Choose profile photo</span>
+                                <span className="sr-only">Choose File</span>
                                 <input type="file" className="block w-full text-sm text-slate-500
                             file:mr-4 file:py-2 file:px-4
                             file:rounded-full file:border-0
