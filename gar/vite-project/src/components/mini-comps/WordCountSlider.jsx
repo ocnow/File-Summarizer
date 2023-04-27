@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 
-export default function(props){
+export default function WordCountSlider(props){
     const [counter,updateCounter] = useState(50);
     const rangeSelector = useRef(null);
 
