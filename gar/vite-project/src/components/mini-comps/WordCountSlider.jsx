@@ -14,7 +14,7 @@ export default function WordCountSlider(props){
                             <div>
                                 <div className="relative flex items-center justify-center gap-2">
                                     <div>100</div>
-                                    <input id="default-range" onChange={handleRangeChange} ref={rangeSelector} type="range" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" min={100} max={200} defaultValue={150}/>
+                                    <input id="default-range" onChange={handleRangeChange} ref={rangeSelector} type="range" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" min={100} max={200} defaultValue={150} step={10}/>
                                     <div>200</div>
                                 </div>
                             </div>

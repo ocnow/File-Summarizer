@@ -13,7 +13,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path='/login' element={<Login />}/>
+            <Route path='/' element={<Login />}/>
             <Route path='/app' element={<Application client={queryClient}/>}/>
           </Routes>
         </BrowserRouter>
