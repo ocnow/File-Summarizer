@@ -9,8 +9,8 @@ export default function SummaryComp({className,data,isLoading,fetchStatus}){
 
     const handleTabClick = function(e){
         console.log("tabclicked");
-        let selectedTab = e.targed.id;
-        if(selectedTab == "paraTab"){
+        let selectedTab = e.target.id;
+        if(selectedTab === "paraTab"){
             setParaActive(true);
         }else{
             setParaActive(false);
@@ -26,8 +26,8 @@ export default function SummaryComp({className,data,isLoading,fetchStatus}){
     return <div className={className + " flex bg-white"}>
 
         <div className="tabs p-0 mt-0">
-                <a id="paraTab" className={"tab tab-lifted " + paraActive ?  "tab-active bg-gray-200 text-black":"text-gray-700"} onClick={handleTabClick}>ParaGraph</a> 
-            <a className={"tab tab-lifted " + paraActive ? "tab-active bg-gray-200 text-black":"text-gray-700"} onClick={handleTabClick}>Bullets</a> 
+                <a id="paraTab" className={"tab tab-lifted " + (paraActive ?  "tab-active bg-gray-200 text-black":"text-gray-700")} onClick={handleTabClick}>ParaGraph</a> 
+            <a id="bulletTab" className={"tab tab-lifted " + (!paraActive ? "tab-active bg-gray-200 text-black":"text-gray-700")} onClick={handleTabClick}>Bullets</a> 
         </div>
 
     <div className="px-8 bg-white"></div>

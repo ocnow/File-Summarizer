@@ -33,7 +33,7 @@ export default function UploadComponent({ className }) {
         <div className="form-control">
           <label className="label cursor-pointer">
             <span className="label-text mr-2 text-black">Upload File</span>
-            <input type="radio" name="radio-10" className="radio checked:bg-red-500 border" onChange={handleRadioChange} ref={fileRadio}/>
+            <input type="radio" name="radio-10" className="radio checked:bg-blue-500 border" onChange={handleRadioChange} ref={fileRadio}/>
           </label>
         </div>
         <div className="form-control">
@@ -46,7 +46,7 @@ export default function UploadComponent({ className }) {
     </div>
 
         <div className="ml-9 min-h-full">
-        {fileInput? <FileChooseComp />: <input type="text" placeholder="https://confluence.com/sample.pdf..." className="w-full rounded-md px-1.5 border"/>}
+        {fileInput? <FileChooseComp />: <input type="text" placeholder="https://confluence.com/sample.pdf..." className="w-full h-8  rounded-md px-1.5 border"/>}
         </div>  
 </div>
 
