@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Sidebar Example</title>
+  <!-- Add the Tailwind CSS stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Set up the transition for the sidebar */
+    .sidebar-closed {
+      transform: translateX(-64px);
+    }
+
+    /* Hide the close button when the sidebar is closed */
+    .sidebar-closed #close-sidebar {
+      display: none;
+    }
+
+    /* Move the main content to the right when the sidebar is opened */
+    .sidebar-opened .flex-1 {
+      transform: translateX(64px);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex h-screen">
+    <div class="fixed inset-y-0 left-0 w-64 bg-gray-900 text-white px-8 py-4 transition duration-300 ease-in-out transform translate-x-0">
+      <!-- Sidebar content goes here -->
+      <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="mb-4">Suspendisse posuere sapien at massa convallis, sit amet rhoncus tortor scelerisque.</p>
+      <p class="mb-4">Aenean pharetra dolor sed neque varius, vel aliquam sapien tincidunt.</p>
+      <button class="bg-white text-gray-900 py-2 px-4 rounded-lg mt-4" id="close-sidebar">Close</button>
+    </div>
+    <div class="flex-1">
+      <!-- Main content goes here -->
+      <h1 class="text-2xl font-bold mb-4">Main Content</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere sapien at massa convallis, sit amet rhoncus tortor scelerisque. Aenean pharetra dolor sed neque varius, vel aliquam sapien tincidunt.</p>
+    </div>
+  </div>
+
+  <!-- Add the JavaScript to show/hide the sidebar -->
+  <script>
+    var sidebar = document.querySelector('.fixed');
+    var mainContent = document.querySelector('.flex-1');
+    var closeButton = document.getElementById('close-sidebar');
+
+    closeButton.addEventListener('click', function() {
+      sidebar.classList.add('sidebar-closed');
+      mainContent.classList.add('sidebar-opened');
+    });
+
+    sidebar.addEventListener('transitionend', function() {
+      if (sidebar.classList.contains('sidebar-closed')) {
+        mainContent.classList.remove('sidebar-opened');
+      }
+    });
+  </script>
+</body>
+</html>
+

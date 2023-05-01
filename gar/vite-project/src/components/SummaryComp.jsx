@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SummaryComp({className,data,isLoading,fetchStatus}){
+export default function SummaryComp({className,data,setData,isLoading,fetchStatus}){
   console.log("this is getting redered.....");
 
  
@@ -17,8 +17,31 @@ export default function SummaryComp({className,data,isLoading,fetchStatus}){
         }
     }
 
-    const copySummary = function(){
-        console.log("copying the symmary");
+    const clearSummary = function(){
+      setData(null);
+    }
+
+    const copySummary = function() {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      const list = document.getElementById('bullet-list');
+    
+      range.selectNodeContents(list);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    
+      try {
+        document.execCommand('copy');
+        console.log('List copied to clipboard!');
+      } catch (err) {
+        console.log('Failed to copy list to clipboard!');
+      }
+    
+      selection.removeAllRanges();
+    }
+
+    const emailSummary = function(){
+        console.log("emailing the summary");
     }
 
   console.log(`${data} ==> ${isLoading} ==> ${fetchStatus}`)
@@ -41,17 +64,20 @@ export default function SummaryComp({className,data,isLoading,fetchStatus}){
       Processing...
     </button> </div>}
         {fetchStatus == 'idle' && data !== null && paraActive && <div className="p-8"><p>{data.para}</p></div>}
-        {fetchStatus == 'idle' && data !== null && !paraActive && <div id="list-div" className="p-7">
-                <ol className="list-decimal"><li>{data.bullets[0]}</li><li>{data.bullets[0]}</li><li>{data.bullets[0]}</li></ol>
-                </div>
+        {fetchStatus == 'idle' && data !== null && !paraActive && <div id="list-div" className="flex justify-center items-start p-7">
+                <ol id="bullet-list" className="list-decimal">
+                    {data.bullets.map((item,index)=>{
+                      return <li className="mb-2">{item}</li>
+                    })}
+                 </ol> 
+            </div>
         }
-        {fetchStatus == 'idle' && data === null && <p className="italic">Please select file & click Summarize</p>}
-    
+        {fetchStatus == 'idle' && data === null && <div className="w-full h-full flex justify-center items-center"><p className="italic">Please select file & click Summarize</p></div>}
+</div>
     <div className="flex justify-end gap-2 mr-2">
-        <button className={actionButtonClasses}>Copy</button>
-        <button className={actionButtonClasses}>Clear</button>
-        <button className={actionButtonClasses}>Email</button>
-    </div>
+        <button className={actionButtonClasses} onClick={copySummary}>Copy</button>
+        <button className={actionButtonClasses} onClick={clearSummary}>Clear</button>
+        <button className={actionButtonClasses} onClick={emailSummary}>Email</button>
 </div>
 </div>
 }
